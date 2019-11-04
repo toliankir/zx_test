@@ -14,37 +14,61 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Muli', sans-serif;
+  padding-top: 2rem;
 }
 header {
-  background-color: red;
   display: flex;
   justify-content: space-between;
 }
-nav {
+header .logo {
+  color: white;
+  font-weight: 800;
+  font-size: 1.5 rem;
+}
+header nav {
   display: flex;
 }
-nav .menu-item {
-  width: 100px;
-  text-align: right;
+header nav .menu-item {
   position: relative;
+  font-weight: 400;
+  font-size: 1rem;
+  padding-right: 3rem;
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
 }
-nav .menu-item:hover .menu-item-content {
+header nav .menu-item:hover .menu-item-content {
   display: block;
-  animation: showMenu 0.5s ease-out;
+  animation: showMenu 0.2s ease-out;
   animation-fill-mode: forwards;
 }
-nav .menu-item-content {
+header nav .menu-item:hover .menu-item-content ul {
+  list-style: none;
+  padding: 0.5rem 1rem;
+  margin: 0;
+}
+header nav .menu-item:hover .menu-item-content ul li {
+  margin: 0.5rem 0;
+  font-weight: 400;
+  color: black;
+  cursor: pointer;
+}
+header nav .menu-item-content {
   position: absolute;
-  right: 0;
-  background-color: green;
-  text-align: right;
-  width: 100px;
+  overflow: hidden;
+  left: 0;
+  top: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  width: 100%;
   opacity: 0;
   display: none;
+  border-radius: 0.2rem;
 }
 .content {
   background-color: yellow;
   display: flex;
+  margin-top: 5rem;
 }
 .content .promo-title {
   width: 65%;
@@ -52,6 +76,33 @@ nav .menu-item-content {
 .content .promo-exchange {
   width: 35%;
 }
+.content .promo-exchange .custom-select:hover .custom-select-list {
+  display: block;
+}
+.content .promo-exchange .custom-select-list {
+  position: absolute;
+  display: none;
+}
+.content .promo-exchange .custom-select-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.content .promo-exchange .custom-select-list ul li {
+  margin: 0;
+}
 .container {
   width: 70%;
+}
+.gradient {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #0b8793;
+  background: -moz-linear-gradient(45deg, #0b8793 0%, #360033 100%);
+  background: -webkit-linear-gradient(45deg, #0b8793 0%, #360033 100%);
+  background: linear-gradient(45deg, #0b8793 0%, #360033 100%);
 }
